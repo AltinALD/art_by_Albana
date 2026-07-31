@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="AO">
+  <defs>
+    <linearGradient id="ink" x1="18" y1="10" x2="102" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f6e6c8"/>
+      <stop offset="40%" stop-color="#e2c49a"/>
+      <stop offset="100%" stop-color="#a67c45"/>
+    </linearGradient>
+    <linearGradient id="inkDeep" x1="30" y1="20" x2="95" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f0d7a8"/>
+      <stop offset="100%" stop-color="#8f6a3d"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- faint atelier ring -->
+  <circle cx="60" cy="62" r="52" stroke="url(#ink)" stroke-width="0.6" opacity="0.28"/>
+
+  <!-- Ornamental O — painterly oval with inner echo -->
+  <ellipse cx="72" cy="64" rx="28" ry="31" stroke="url(#ink)" stroke-width="4.2" transform="rotate(-8 72 64)"/>
+  <ellipse cx="72" cy="64" rx="18.5" ry="21" stroke="url(#inkDeep)" stroke-width="1.1" opacity="0.55" transform="rotate(-8 72 64)"/>
+
+  <!-- Calligraphic A — uneven brush legs -->
+  <path
+    d="M34 96
+       C36 90 38 78 42 58
+       C45 42 48 28 52 18
+       C54 28 58 46 64 68
+       C68 82 72 92 76 98"
+    stroke="url(#ink)"
+    stroke-width="5.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#soft)"
+  />
+  <!-- A crossbar as a single brush swipe -->
+  <path
+    d="M40 68 C48 64 58 66 68 70"
+    stroke="url(#ink)"
+    stroke-width="3.4"
+    stroke-linecap="round"
+  />
+  <!-- thick foot flare on left leg -->
+  <path
+    d="M30 98 C32 96 35 95 38 94"
+    stroke="url(#inkDeep)"
+    stroke-width="3.8"
+    stroke-linecap="round"
+    opacity="0.85"
+  />
+
+  <!-- Art Nouveau vine flourish top-right of O -->
+  <path
+    d="M88 28
+       C96 22 104 30 98 38
+       C94 43 90 40 92 34
+       C94 28 100 32 96 36"
+    stroke="url(#ink)"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0.9"
+  />
+  <path
+    d="M94 24 C97 18 104 20 102 27"
+    stroke="url(#ink)"
+    stroke-width="1.3"
+    stroke-linecap="round"
+    opacity="0.75"
+  />
+
+  <!-- Leaf / petal accents -->
+  <path d="M100 34 C104 30 108 36 104 40 C101 37 100 36 100 34Z" fill="url(#ink)" opacity="0.8"/>
+  <path d="M86 22 C90 16 96 20 92 26 C89 24 87 23 86 22Z" fill="url(#ink)" opacity="0.7"/>
+
+  <!-- Tiny paintbrush kissing the O -->
+  <g transform="translate(86 78) rotate(38)">
+    <rect x="0" y="0" width="2.2" height="16" rx="1" fill="url(#inkDeep)"/>
+    <path d="M-1.2 16 L3.4 16 L2.2 22 L0 22 Z" fill="url(#ink)"/>
+    <path d="M0.2 22 L2 22 L1.8 24.5 L0.5 24.5 Z" fill="#c4a074"/>
+  </g>
+
+  <!-- ink speckles — atelier grit -->
+  <circle cx="28" cy="40" r="0.9" fill="url(#ink)" opacity="0.55"/>
+  <circle cx="24" cy="52" r="0.55" fill="url(#ink)" opacity="0.4"/>
+  <circle cx="98" cy="72" r="0.7" fill="url(#ink)" opacity="0.45"/>
+  <circle cx="44" cy="20" r="0.6" fill="url(#ink)" opacity="0.5"/>
+</svg>

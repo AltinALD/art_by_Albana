@@ -36,8 +36,7 @@ export function createGallery3D({
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
-  renderer.shadowMap.enabled = !isMobile;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.enabled = false;
   mount.appendChild(renderer.domElement);
   renderer.domElement.classList.add("gallery3d-canvas");
   renderer.domElement.setAttribute("aria-label", "3D art gallery");
@@ -282,26 +281,28 @@ export function createGallery3D({
     frames.push({ group, art, glow, work, spot });
   };
 
-  const loadAll = async () => {
-    const tasks = works.map(
-      (work, index) =>
-        new Promise((resolve, reject) => {
-          loader.load(
-            work.image,
-            (tex) => {
-              makeFrame(work, index, tex);
-              resolve();
-            },
-            undefined,
-            reject
-          );
-        })
-    );
-    await Promise.all(tasks);
-    onReady?.();
+  // Reveal hall immediately; paintings pop in as textures arrive
+  onReady?.();
+
+  let loaded = 0;
+  const loadAll = () => {
+    works.forEach((work, index) => {
+      loader.load(
+        work.image,
+        (tex) => {
+          makeFrame(work, index, tex);
+          loaded += 1;
+        },
+        undefined,
+        () => {
+          loaded += 1;
+          if (loaded >= works.length && frames.length === 0) onError?.(new Error("textures"));
+        }
+      );
+    });
   };
 
-  loadAll().catch((err) => onError?.(err));
+  loadAll();
 
   // Interaction
   const raycaster = new THREE.Raycaster();

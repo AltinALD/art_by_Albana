@@ -2,7 +2,7 @@
 export const works = [
   {
     id: "love-bears-all-things",
-    image: "assets/art/love-bears-all-things.png",
+    image: "assets/art/love-bears-all-things.jpg",
     price: null,
     priceless: true,
     aspect: 0.8,
@@ -27,7 +27,7 @@ export const works = [
   },
   {
     id: "lypesi",
-    image: "assets/art/lypesi.png",
+    image: "assets/art/lypesi.jpg",
     price: 1600,
     aspect: 0.75,
     sq: {
@@ -47,7 +47,7 @@ export const works = [
   },
   {
     id: "orange-velvet",
-    image: "assets/art/orange-velvet.png",
+    image: "assets/art/orange-velvet.jpg",
     price: 1450,
     aspect: 1.1,
     sq: {
@@ -67,7 +67,7 @@ export const works = [
   },
   {
     id: "red-lady",
-    image: "assets/art/red-lady.png",
+    image: "assets/art/red-lady.jpg",
     price: 1800,
     aspect: 0.9,
     sq: {

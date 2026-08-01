@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Albana Osmani — Galeri Arte</title>
-  <meta name="description" content="Galeri origjinale e Albana Osmani. Piktura figurative dhe ekspresioniste nga Shqipëria." />
+  <title>Albana Osmani — Galeri Arte 3D</title>
+  <meta name="description" content="Galeria immersive 3D e Albana Osmani. Eksploro piktura figurative në hapësirë virtuale." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="assets/brand/ao-logo.png" type="image/png" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -53,12 +61,15 @@
         </div>
         <p class="hero-brand">Albana Osmani</p>
         <h1 class="hero-title" data-i18n="hero.title">Ngjyra që mbajnë kujtesën.</h1>
-        <p class="hero-lede" data-i18n="hero.lede">Piktura origjinale figurative nga Shqipëria — të nënshkruara, të gatshme për murin tuaj.</p>
+        <p class="hero-lede" data-i18n="hero.lede">Hyr në galerinë 3D — rrotullo hapësirën, prek veprat, lexo historitë.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#gallery" data-i18n="hero.cta1">Shiko koleksionin</a>
+          <a class="btn btn-primary" href="#gallery" data-i18n="hero.cta1">Hyr në galerinë 3D</a>
           <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta2">Porosi një vepër</a>
         </div>
       </div>
+      <a class="scroll-cue" href="#gallery" aria-label="Gallery">
+        <span></span>
+      </a>
     </section>
 
     <section class="quote-band" aria-label="Quote">
@@ -68,14 +79,48 @@
       </blockquote>
     </section>
 
-    <section id="gallery" class="gallery">
-      <header class="section-head">
-        <p class="eyebrow" data-i18n="gallery.eyebrow">Koleksioni</p>
-        <h2 data-i18n="gallery.title">Vepra të disponueshme</h2>
-        <p class="section-lede" data-i18n="gallery.lede">Çdo pikturë ka një histori. Lexo një copë — pastaj shiko më shumë.</p>
+    <section id="gallery" class="immersive">
+      <header class="section-head immersive__head">
+        <p class="eyebrow" data-i18n="gallery.eyebrow">Galeria immersive</p>
+        <h2 data-i18n="gallery.title">Hapësira 3D</h2>
+        <p class="section-lede" data-i18n="gallery.lede">Tërhiq për të eksploruar · Kliko një pikturë për ta parë nga afër.</p>
       </header>
 
-      <div class="gallery-grid" id="gallery-grid"></div>
+      <div class="immersive__stage">
+        <div class="gallery3d" data-gallery3d></div>
+
+        <div class="gallery-loader" data-gallery-loader>
+          <img src="assets/brand/ao-logo.png" alt="" width="72" height="72" />
+          <p data-i18n="gallery.loading">Duke hapur galerinë…</p>
+          <div class="gallery-loader__bar"><span></span></div>
+        </div>
+
+        <div class="gallery-fallback" data-gallery-fallback>
+          <p>3D nuk u ngarkua në këtë pajisje. Shiko koleksionin më poshtë.</p>
+        </div>
+
+        <div class="immersive__hud">
+          <p class="immersive__hint" data-i18n="gallery.hint">Tërhiq · Rrotullo · Kliko artin</p>
+          <div class="work-rail" data-work-rail></div>
+        </div>
+
+        <aside class="art-panel" data-art-panel aria-live="polite">
+          <button type="button" class="art-panel__close" data-art-close data-i18n="gallery.back">Kthehu në sallë</button>
+          <h3 class="art-panel__title" data-art-title></h3>
+          <p class="art-panel__meta" data-art-meta></p>
+          <p class="art-panel__price" data-art-price></p>
+          <p class="art-panel__story" data-art-story></p>
+          <div class="art-panel__actions">
+            <button type="button" class="story-toggle" data-art-more data-i18n="gallery.more">Shiko më shumë</button>
+            <a class="piece-reserve" href="#contact" data-art-reserve data-i18n="gallery.reserve">Rezervo</a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="list-wrap">
+        <p class="eyebrow" data-i18n="gallery.list">Pamja listë</p>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
     </section>
 
     <section id="artist" class="artist">
@@ -135,6 +180,6 @@
     <p class="footer-meta">© <span id="year"></span> · <span data-i18n="footer.meta">Krijuar me dorë në Shqipëri · Dërgesë botërore</span></p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

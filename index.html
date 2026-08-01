@@ -28,7 +28,7 @@
       <span class="nav-brand-text">Albana Osmani</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#gallery" data-i18n="nav.gallery">Galeria</a>
+      <a href="#top" data-i18n="nav.gallery">Galeria</a>
       <a href="#artist" data-i18n="nav.artist">Artistja</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
@@ -39,52 +39,14 @@
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero" data-hero>
-      <div class="hero-media" data-hero-media>
-        <div class="hero-parallax" data-hero-parallax>
-          <img
-            src="assets/artist/hero.png"
-            alt="Albana Osmani"
-            class="hero-portrait"
-            width="900"
-            height="1200"
-            data-hero-img
-          />
-        </div>
-        <div class="hero-veil" aria-hidden="true"></div>
-        <div class="hero-light" data-hero-light aria-hidden="true"></div>
+  <main>
+    <!-- Spiral 3D orbit — first viewport -->
+    <section id="top" class="immersive immersive--hero">
+      <div class="immersive__intro">
+        <img src="assets/brand/ao-logo.png" alt="" class="immersive__logo" width="64" height="64" />
+        <p class="immersive__brand">Albana Osmani</p>
+        <p class="immersive__tag" data-i18n="gallery.lede">Tërhiq për të eksploruar · Kliko një pikturë për ta parë nga afër.</p>
       </div>
-      <div class="hero-copy" data-hero-copy>
-        <div class="hero-logo-mark" aria-hidden="true">
-          <img src="assets/brand/ao-logo.png" alt="" width="96" height="96" />
-        </div>
-        <p class="hero-brand">Albana Osmani</p>
-        <h1 class="hero-title" data-i18n="hero.title">Ngjyra që mbajnë kujtesën.</h1>
-        <p class="hero-lede" data-i18n="hero.lede">Hyr në galerinë 3D — rrotullo hapësirën, prek veprat, lexo historitë.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#gallery" data-i18n="hero.cta1">Hyr në galerinë 3D</a>
-          <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta2">Porosi një vepër</a>
-        </div>
-      </div>
-      <a class="scroll-cue" href="#gallery" aria-label="Gallery">
-        <span></span>
-      </a>
-    </section>
-
-    <section class="quote-band" aria-label="Quote">
-      <blockquote>
-        <p data-i18n="quote.text">« Dashuria i duron të gjitha. »</p>
-        <footer data-i18n="quote.attr">— Fjala e njohur · frymëzim i koleksionit</footer>
-      </blockquote>
-    </section>
-
-    <section id="gallery" class="immersive">
-      <header class="section-head immersive__head">
-        <p class="eyebrow" data-i18n="gallery.eyebrow">Galeria immersive</p>
-        <h2 data-i18n="gallery.title">Hapësira 3D</h2>
-        <p class="section-lede" data-i18n="gallery.lede">Tërhiq për të eksploruar · Kliko një pikturë për ta parë nga afër.</p>
-      </header>
 
       <div class="immersive__stage">
         <div class="gallery3d" data-gallery3d></div>
@@ -117,10 +79,16 @@
         </aside>
       </div>
 
-      <div class="list-wrap">
-        <p class="eyebrow" data-i18n="gallery.list">Pamja listë</p>
-        <div class="gallery-grid" id="gallery-grid"></div>
-      </div>
+      <a class="scroll-cue" href="#artist" aria-label="Continue">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="quote-band" aria-label="Quote">
+      <blockquote>
+        <p data-i18n="quote.text">« Dashuria i duron të gjitha. »</p>
+        <footer data-i18n="quote.attr">— Fjala e njohur · frymëzim i koleksionit</footer>
+      </blockquote>
     </section>
 
     <section id="artist" class="artist">
@@ -144,7 +112,20 @@
           Nga studioja në Shqipëri, veprat dërgohen në Evropë dhe më gjerë. Porosi personale janë të mirëpritura.
         </p>
         <p class="artist-quote" data-i18n="artist.quote">« Në çdo tuş fshihet një frymëmarrje. »</p>
+        <div class="artist-actions">
+          <a class="btn btn-primary" href="#works" data-i18n="gallery.list">Shiko listën</a>
+          <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta2">Porosi një vepër</a>
+        </div>
       </div>
+    </section>
+
+    <section id="works" class="list-section">
+      <header class="section-head">
+        <p class="eyebrow" data-i18n="gallery.eyebrow">Galeria immersive</p>
+        <h2 data-i18n="gallery.title">Hapësira 3D</h2>
+        <p class="section-lede" data-i18n="gallery.lede">Tërhiq për të eksploruar · Kliko një pikturë për ta parë nga afër.</p>
+      </header>
+      <div class="gallery-grid" id="gallery-grid"></div>
     </section>
 
     <section id="contact" class="contact">

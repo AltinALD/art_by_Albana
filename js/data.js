@@ -102,7 +102,7 @@ export const i18n = {
     "quote.text": "« Dashuria i duron të gjitha. »",
     "quote.attr": "— Fjala e njohur · frymëzim i koleksionit",
     "gallery.eyebrow": "Galeria immersive",
-    "gallery.title": "Hapësira 3D",
+    "gallery.title": "Koleksioni",
     "gallery.lede":
       "Tërhiq për të eksploruar · Kliko një pikturë për ta parë nga afër.",
     "gallery.more": "Shiko më shumë",
@@ -111,7 +111,7 @@ export const i18n = {
     "gallery.hint": "Tërhiq · Rrotullo · Kliko artin",
     "gallery.back": "Kthehu në sallë",
     "gallery.loading": "Duke hapur galerinë…",
-    "gallery.list": "Pamja listë",
+    "gallery.list": "Shiko listën",
     "artist.eyebrow": "Artistja",
     "artist.role": "Piktore · Shqipëri",
     "artist.p1":
@@ -145,7 +145,7 @@ export const i18n = {
     "quote.text": "« Love bears all things. »",
     "quote.attr": "— The familiar words · collection inspiration",
     "gallery.eyebrow": "Immersive gallery",
-    "gallery.title": "3D space",
+    "gallery.title": "Collection",
     "gallery.lede": "Drag to explore · Click a painting to step closer.",
     "gallery.more": "See more",
     "gallery.less": "Close story",
@@ -153,7 +153,7 @@ export const i18n = {
     "gallery.hint": "Drag · Orbit · Click art",
     "gallery.back": "Back to hall",
     "gallery.loading": "Opening the gallery…",
-    "gallery.list": "List view",
+    "gallery.list": "View list",
     "artist.eyebrow": "The artist",
     "artist.role": "Painter · Albania",
     "artist.p1":

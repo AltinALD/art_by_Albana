@@ -16,7 +16,7 @@ import { createGallery3D } from "./gallery3d.js";
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* Interactive monochrome hero */
+  /* Interactive monochrome hero (optional section) */
   const hero = document.querySelector("[data-hero]");
   const heroParallax = document.querySelector("[data-hero-parallax]");
   const heroLight = document.querySelector("[data-hero-light]");
@@ -233,7 +233,7 @@ import { createGallery3D } from "./gallery3d.js";
     grid.querySelectorAll("[data-focus-3d]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const id = btn.getAttribute("data-focus-3d");
-        document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("top")?.scrollIntoView({ behavior: "smooth" });
         setTimeout(() => galleryApi?.focusWork(id), 450);
       });
     });

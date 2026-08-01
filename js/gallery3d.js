@@ -56,14 +56,16 @@ export function createGallery3D({
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
-  controls.dampingFactor = 0.06;
+  controls.dampingFactor = 0.08;
+  controls.rotateSpeed = 0.38;
+  controls.zoomSpeed = 0.55;
   controls.minDistance = 3.2;
   controls.maxDistance = 16;
   controls.maxPolarAngle = Math.PI * 0.48;
   controls.minPolarAngle = Math.PI * 0.22;
   controls.target.set(0, 1.6, 0);
   controls.autoRotate = !reduceMotion;
-  controls.autoRotateSpeed = 0.45;
+  controls.autoRotateSpeed = 0.28;
   controls.enablePan = false;
 
   // Lights
